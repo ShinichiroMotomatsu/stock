@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式投資基礎講座 (改訂版 - スライド7-3削除)</title> <style>
+  /* --- (略: 他のスタイルは変更なし) --- */
+  body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  .slide-container {
+      position: relative;
+      padding-bottom: 50px;
+  }
+  .slide {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 20px auto;
+    padding: 30px;
+    max-width: 900px;
+    min-height: 520px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  .slide.active {
+      display: flex;
+  }
+  .slide-title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2.5em;
+      color: #333;
+  }
+  .slide-subtitle {
+      text-align: center;
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 30px;
+  }
+  .slide h1 {
+    font-size: 1.8em;
+    color: #005bab;
+    border-bottom: 2px solid #005bab;
+    padding-bottom: 5px;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+   .slide h2 {
+    font-size: 1.3em;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .slide p, .slide li, .slide td, .slide th {
+    font-size: 0.95em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .slide strong {
+      color: #d9534f;
+  }
+  .slide ul.edge-list strong, .slide ol.example-list strong {
+      color: #005bab;
+      font-weight: bold;
+  }
+   .slide ul.edge-list li, .slide ol.example-list li {
+       margin-bottom: 12px;
+   }
+  .slide ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      margin-bottom: 15px;
+  }
+  .slide ol {
+       list-style-type: decimal;
+       margin-left: 25px;
+       margin-bottom: 15px;
+   }
+  .image-container {
+      width: 100%;
+      text-align: center;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100px;
+  }
+  .image-container img {
+       max-width: 90%;
+       max-height: 300px;
+       height: auto;
+       display: block;
+       margin: 0 auto;
+  }
+  .image-container img.img-original-size {
+       max-width: none;
+       max-height: none;
+       width: auto;
+       height: auto;
+  }
+  .svg-container, .table-container {
+      width: 100%;
+      text-align: center;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100px;
+  }
+  .svg-placeholder {
+      border: 1px dashed #ccc;
+      padding: 20px;
+      color: #999;
+      font-style: italic;
+      display: inline-block;
+  }
+  svg {
+      max-width: 100%;
+      height: auto;
+      max-height: 300px;
+      display: block;
+      margin: 0 auto;
+  }
+  svg text {
+      font-family: sans-serif;
+      font-size: 8px;
+      fill: #333;
+  }
+  svg .label {
+      font-weight: bold;
+      font-size: 9px;
+  }
+   svg .title-label {
+      font-weight: bold;
+      font-size: 10px;
+      text-anchor: middle;
+  }
+  svg .axis-line { stroke: #333; stroke-width: 1; }
+  svg .bar { fill: #5bc0de; stroke: #46b8da; }
+  svg .bar-alt { fill: #f0ad4e; stroke: #eea236; }
+  svg .line { fill: none; stroke-width: 2; }
+  svg .trend-up { stroke: #5cb85c; }
+  svg .trend-down { stroke: #d9534f; }
+  svg .arrow-head { fill: #333; }
+  svg .ng-mark circle { fill: none; stroke: #d9534f; stroke-width: 2; }
+  svg .ng-mark line { stroke: #d9534f; stroke-width: 2; }
+  svg .icon-placeholder { fill: #eee; stroke: #ccc; }
+  svg .venn-circle { mix-blend-mode: multiply; }
+  svg .qr-placeholder { fill: #ddd; stroke: #aaa; }
+  table { border-collapse: collapse; width: 90%; margin: 15px auto; font-size: 0.9em; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
+  th { background-color: #f2f2f2; font-weight: bold; text-align: center; }
+  .comparison-table th { background-color: #005bab; color: white; }
+  .data-table td:first-child { font-weight: bold; background-color: #f9f9f9; width: 30%; }
+  .data-table td:nth-child(2) { width: 40%; }
+   .data-table.summary-table td:first-child { width: 25%; }
+   .data-table.summary-table td:nth-child(2) { width: 75%; }
+  .checklist-table td:first-child { width: 5%; text-align: center; }
+  .checklist-table td:last-child { width: 95%; }
+  .text-center { text-align: center; }
+  .text-right { text-align: right; }
+  .strong-point { color: #5cb85c; }
+  .weak-point { color: #d9534f; }
+  .plus { color: #5cb85c; }
+  .minus { color: #d9534f; }
+  .slide-navigation { position: fixed; bottom: 0; left: 0; width: 100%; background-color: rgba(240, 240, 240, 0.9); padding: 10px 0; text-align: center; box-shadow: 0 -2px 5px rgba(0,0,0,0.1); z-index: 100; display: flex; justify-content: center; align-items: center; }
+  .slide-navigation button { background-color: #005bab; color: white; border: none; padding: 8px 15px; font-size: 1em; border-radius: 4px; cursor: pointer; margin: 0 10px; transition: background-color 0.2s; }
+  .slide-navigation button:hover { background-color: #003f7f; }
+  .slide-navigation button:disabled { background-color: #ccc; cursor: not-allowed; }
+  #slideCounter { font-size: 0.9em; color: #555; margin: 0 15px; min-width: 50px; display: inline-block; }
+
+</style>
+</head>
+<body>
+
+<div class="slide-container">
+
+    <section class="slide">
+      <h1 class="slide-title">株式投資基礎講座</h1>
+      <p class="slide-subtitle">これから 60 分で、株価が動く仕組み、チャートや銘柄の選び方、そして個人投資家が“負けにくく”なる戦略の 3 つを身につけます。未経験でも“なぜ値段が動き、どこで買い・売るのか”を自分で説明できる状態がゴールです。</p>
+    </section>
+
+    <section class="slide">
+      <h1>今日の到達イメージ</h1>
+      <div style="display: flex; justify-content: space-around; align-items: flex-start; margin-top: 30px;">
+        <div style="text-align: center; width: 40%;">
+          <h2>Before</h2>
+          <p>「ニュースの値上がり・値下がりが気になるだけ」</p>
+        </div>
+        <div style="font-size: 3em; color: #005bab; margin: 20px 10px 0;">→</div>
+        <div style="text-align: center; width: 40%;">
+          <h2>After</h2>
+          <p>①値動きの理由を言語化<br>②チャートから方向感を読み取る<br>③自分のルールでエントリー／エグジットを設定</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>1‑1 株はゼロサムではないが“資金移転”は起きる</h1>
+      <p>株価は企業価値の成長に伴い長期的には右肩上がり＝総和拡大ゲーム。しかし短期的には「安く売った人の損失」が「高く売った人の利益」に移転する。だからこそ<strong>「誰に勝ち、誰と戦わないか」を戦略的に選ぶことが重要</strong>です。</p>
+      <div class="svg-container">
+        <svg viewBox="0 0 300 150">
+          <rect x="30" y="100" width="50" height="30" fill="#aaddff"/>
+          <rect x="90" y="80" width="50" height="50" fill="#aaddff"/>
+          <rect x="150" y="60" width="50" height="70" fill="#aaddff"/>
+          <rect x="210" y="40" width="50" height="90" fill="#aaddff"/>
+          <line x1="20" y1="130" x2="280" y2="130" class="axis-line"/>
+          <line x1="20" y1="20" x2="20" y2="130" class="axis-line"/>
+          <text x="10" y="25" font-size="8">価値</text>
+          <text x="285" y="135" font-size="8">時間</text>
+          <text x="140" y="15" text-anchor="middle" class="label">企業価値 (長期上昇)</text>
+          <path d="M 100 50 Q 140 70 180 50" stroke="#d9534f" stroke-width="2" fill="none"/>
+          <polygon points="175,45 180,50 175,55" fill="#d9534f"/>
+          <text x="140" y="45" text-anchor="middle" font-size="7" fill="#d9534f">損失者の資金</text>
+          <path d="M 180 90 Q 140 110 100 90" stroke="#5cb85c" stroke-width="2" fill="none"/>
+          <polygon points="105,95 100,90 105,85" fill="#5cb85c"/>
+          <text x="140" y="115" text-anchor="middle" font-size="7" fill="#5cb85c">利益者の資金</text>
+          <text x="140" y="80" text-anchor="middle" font-size="8">短期プライスでの資金移転</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>1‑2 市場には誰がいる？（市場参加者の内訳）</h1>
+      <p>東証の売買代金シェア例：機関投資家 50〜55％、HFT/アルゴ 25〜30％、個人投資家 15〜20％。個人は少数派である点をまず認識しましょう。</p>
+      <div class="svg-container">
+        <svg viewBox="0 0 200 110">
+          <title>東証売買代金シェア（イメージ）</title>
+          <circle cx="55" cy="55" r="45" fill="#ddd"/>
+          <path d="M 55 55 L 55 10 A 45 45 0 1 1 41.09 97.79 L 55 55 Z" fill="#005bab"/>
+          <path d="M 55 55 L 41.09 97.79 A 45 45 0 0 1 19.33 78.0 L 55 55 Z" fill="#5bc0de"/>
+          <path d="M 55 55 L 19.33 78.0 A 45 45 0 0 1 55 10 L 55 55 Z" fill="#f0ad4e"/>
+          <rect x="115" y="25" width="8" height="8" fill="#005bab"/>
+          <text x="128" y="32" font-size="8">機関 (50-55%)</text>
+          <rect x="115" y="45" width="8" height="8" fill="#5bc0de"/>
+          <text x="128" y="52" font-size="8">HFT/アルゴ (25-30%)</text>
+          <rect x="115" y="65" width="8" height="8" fill="#f0ad4e"/>
+          <text x="128" y="72" font-size="8">個人 (15-20%)</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>1‑3 プレーヤーごとの強み・弱み</h1>
+      <p>機関＝資金量・調査力は強いが遅い／HFT＝速いがリスク取らない／個人＝柔軟だが情報・感情が弱点。それぞれの特徴を理解しよう。</p>
+      <div class="table-container">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>プレーヤー</th>
+              <th>強み</th>
+              <th>弱み</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>機関投資家</th>
+              <td><span class="strong-point">資金量、調査力</span></td>
+              <td><span class="weak-point">機動力低い (ポジション変更)</span></td>
+            </tr>
+            <tr>
+              <th>HFT/アルゴ</th>
+              <td><span class="strong-point">超高速取引、手数料収入</span></td>
+              <td><span class="weak-point">持ち越しリスク回避</span></td>
+            </tr>
+            <tr>
+              <th>個人投資家</th>
+              <td><span class="strong-point">柔軟性、小型株投資</span></td>
+              <td><span class="weak-point">情報(粗さ)、感情</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>1‑4 個人投資家が戦う場所・避ける場所</h1>
+      <ul>
+          <li><strong>避ける：</strong>超高速取引の世界 (HFT)</li>
+          <li><strong>挑む：</strong>機関が入りにくい小型株や、中期的なトレンド。自分の得意な土俵を見つけよう。</li>
+      </ul>
+      <div class="svg-container">
+        <svg viewBox="0 0 300 170">
+            <title>戦う土俵マトリクス</title>
+            <line x1="50" y1="140" x2="280" y2="140" class="axis-line"/>
+            <line x1="50" y1="10" x2="50" y2="140" class="axis-line"/>
+            <text x="285" y="145" font-size="8">流動性 → (高)</text>
+            <text x="45" y="10" text-anchor="end" font-size="8">時間軸</text>
+            <text x="45" y="25" text-anchor="end" font-size="7">(短)↑</text>
+            <text x="45" y="135" text-anchor="end" font-size="7">(長)↓</text>
+            <rect x="165" y="10" width="115" height="60" fill="#ffebee"/>
+            <text x="222.5" y="35" text-anchor="middle" font-size="9" fill="#d9534f">避ける (HFT領域)</text>
+            <text x="222.5" y="50" text-anchor="middle" font-size="7" fill="#d9534f">(秒〜分)</text>
+            <rect x="50" y="75" width="110" height="65" fill="#e8f5e9"/>
+            <text x="105" y="95" text-anchor="middle" font-size="9" fill="#5cb85c">挑む (個人有利)</text>
+            <text x="105" y="110" text-anchor="middle" font-size="7" fill="#5cb85c">(小型株・中期トレンド)</text>
+             <text x="105" y="125" text-anchor="middle" font-size="7" fill="#5cb85c">(3-12ヶ月)</text>
+             <rect x="50" y="10" width="110" height="60" fill="#fff" stroke="#eee"/>
+             <text x="105" y="40" text-anchor="middle" font-size="8" fill="#aaa">短期/低流動性</text>
+             <rect x="165" y="75" width="115" height="65" fill="#fff" stroke="#eee"/>
+             <text x="222.5" y="110" text-anchor="middle" font-size="8" fill="#aaa">機関領域/長期</text>
+            <text x="222.5" y="155" text-anchor="middle" font-size="8">大型株/高頻度</text>
+            <text x="105" y="155" text-anchor="middle" font-size="8">小型株/低頻度</text>
+            <text x="35" y="40" text-anchor="middle" writing-mode="vertical-rl" font-size="8">短期</text>
+            <text x="35" y="110" text-anchor="middle" writing-mode="vertical-rl" font-size="8">中長期</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>1‑5 個人の強み（エッジ）を活かすには？</h1>
+      <ul class="edge-list" style="margin-top: 20px;">
+          <li>
+              <strong>① 深掘りリサーチ：情報の「質」で勝負する</strong><br>
+              機関投資家がカバーしきれないニッチな情報源や、公開情報に対する深い洞察力で優位に立つことができます。例えば、特定の業界の専門知識、地域経済への影響、競合他社の動向など、独自の視点で情報の「質」を高めることが武器になります。
+          </li>
+          <li>
+              <strong>② “待つ”戦略：時間的な柔軟性を活かす</strong><br>
+              個人投資家は、常に市場に参加し続ける必要はありません。相場が不透明な時や明確な投資機会が見当たらない時は、<strong>現金を多く保有（キャッシュポジションを高める）</strong>して好機をじっくりと<strong>「待つ」</strong>ことができます。これにより、リスクの高い局面での損失を回避し、次の大きなチャンスに備えることが可能です。
+          </li>
+          <li>
+              <strong>③ 流動性エッジ：ニッチな市場で戦う</strong><br>
+              大規模な資金を動かす機関投資家は、売買の影響が大きすぎるため、流動性の低い（取引量の少ない）小型株やニッチ市場への投資を敬遠することがあります。個人投資家は、こうした<strong>機関投資家の「死角」</strong>となる領域で、彼らとの直接的な競争を避けながら、情報収集や分析力で有利なポジションを築くことができます。
+          </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h1>2‑1 株価＝期待 × 確率 のシーソーゲーム</h1>
+      <p>価格は「将来への期待（例：業績）」と「それが実現する確率」の市場コンセンサス。これがニュース等で刻々と変わるから値段が動く。</p>
+      <div class="svg-container">
+        <svg viewBox="0 0 300 100">
+            <text x="10" y="40" font-size="10">株価 (P)</text>
+            <text x="70" y="40" font-size="10">=</text>
+            <text x="90" y="40" font-size="10">Σ [ 将来CF期待値(E) × 実現確率(Prob) ]</text>
+            <text x="150" y="70" text-anchor="middle" font-size="9">市場コンセンサス</text>
+            <path d="M 150 60 V 50" stroke="#333" stroke-width="1"/>
+            <polygon points="148,50 150,47 152,50" fill="#333"/>
+            <path d="M 50 50 C 80 80, 220 80, 250 50" fill="none" stroke="#ccc" stroke-dasharray="4 2"/>
+            <text x="150" y="90" text-anchor="middle" font-size="9">刻々と更新 → 値動き</text>
+            <path d="M 250 50 H 270" stroke="#333" stroke-width="2"/>
+            <polygon points="267,48 270,50 267,52" fill="#333"/>
+            <text x="275" y="54" font-size="10">P'</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>2‑2 世の中全体の動き（マクロ要因）の影響</h1>
+      <p>景気の波や金利の動きは、大きな潮の流れ。景気が良ければ期待↑、金利が上がれば株は売られやすい。この流れには逆らえません。</p>
+      <div class="svg-container">
+        <svg viewBox="0 0 300 140">
+            <title>景気循環と金利の影響</title>
+            <path d="M 30 100 Q 80 40, 150 80 T 270 60" stroke="#005bab" stroke-width="2" fill="none"/>
+            <text x="40" y="115" font-size="8">好況期</text>
+            <text x="100" y="35" font-size="8">ピーク</text>
+            <text x="180" y="115" font-size="8">後退期</text>
+            <text x="240" y="55" font-size="8">ボトム</text>
+            <text x="150" y="15" text-anchor="middle" class="label">景気循環</text>
+            <line x1="200" y1="25" x2="200" y2="45" stroke="#d9534f" stroke-width="2"/>
+            <polygon points="197,45 200,50 203,45" fill="#d9534f"/>
+            <text x="210" y="30" font-size="8" fill="#d9534f">政策金利↑</text>
+            <text x="210" y="45" font-size="8" fill="#d9534f">→PER低下圧力</text>
+            <line x1="70" y1="70" x2="90" y2="60" stroke="#5cb85c" stroke-width="2"/>
+            <polygon points="87,58 90,60 87,62" fill="#5cb85c"/>
+            <text x="95" y="63" font-size="8" fill="#5cb85c">業績期待↑</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>2‑3 会社個別のニュース（ミクロ要因）の影響</h1>
+      <p>会社の決算発表や新製品ニュースで株価は急変。「良いニュースなのに下がる」ことも。数字だけでなく、将来の物語（ガイダンス）も重要。</p>
+      <div class="svg-container">
+         <svg viewBox="0 0 300 150">
+          <title>EPS予想 vs 実績</title>
+          <line x1="30" y1="130" x2="270" y2="130" class="axis-line"/>
+          <line x1="30" y1="20" x2="30" y2="130" class="axis-line"/>
+          <text x="150" y="145" text-anchor="middle" font-size="8">決算期</text>
+          <text x="25" y="18" text-anchor="end" font-size="8">EPS</text>
+          <rect x="50" y="80" width="20" height="50" class="bar-alt" />
+          <rect x="75" y="60" width="20" height="70" class="bar" />
+          <text x="72.5" y="140" text-anchor="middle" font-size="7">Q1</text>
+          <text x="72.5" y="55" text-anchor="middle" font-size="7" fill="#5cb85c">↑Positive</text>
+           <rect x="120" y="70" width="20" height="60" class="bar-alt" />
+          <rect x="145" y="75" width="20" height="55" class="bar" />
+          <text x="142.5" y="140" text-anchor="middle" font-size="7">Q2</text>
+          <text x="142.5" y="70" text-anchor="middle" font-size="7" fill="#d9534f">↓Negative</text>
+           <rect x="190" y="50" width="20" height="80" class="bar-alt" />
+          <rect x="215" y="90" width="20" height="40" class="bar" />
+          <text x="212.5" y="140" text-anchor="middle" font-size="7">Q3</text>
+          <text x="212.5" y="85" text-anchor="middle" font-size="7" fill="#f0ad4e">↓材料出尽くし?</text>
+          <rect x="200" y="10" width="8" height="8" class="bar-alt"/>
+          <text x="212" y="17" font-size="7">予想</text>
+          <rect x="200" y="25" width="8" height="8" class="bar"/>
+          <text x="212" y="32" font-size="7">実績</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>2‑4 決算の鍵：「ガイダンス」と「市場コンセンサス」</h1>
+      <p>決算発表では過去の実績だけでなく、会社自身の未来予想図<strong>「ガイダンス」</strong>も超重要！ そして、市場のプロ（アナリスト）たちの予想平均値<strong>「市場コンセンサス（＝市場の期待値）」</strong>と比べてどうかが株価を動かすカギです。</p>
+      <div class="image-container">
+          <img src="guidance-consensus-impact.png"
+               alt="決算発表における実績・ガイダンスと市場コンセンサスの比較、株価への影響を示す図"
+               style="max-width: 100%; height: auto;" />
+      </div>
+    </section>
+
+    <section class="slide">
+        <h1>2‑5 株価を動かす「サプライズ」の仕組み</h1>
+        <p>株価は、単純な「良い/悪い」ではなく、<strong>「市場の期待（コンセンサス）と比べてどうだったか？」</strong>で動きます。「実績」と「ガイダンス」の両方がコンセンサスを<strong>上回ればポジティブサプライズ（株価↑）</strong>、<strong>下回ればネガティブサプライズ（株価↓）</strong>となりやすいのです。</p>
+        <div class="image-container">
+           <img src="surprise-mechanism.png"
+                alt="市場コンセンサス（期待）に対する実績・ガイダンスの上振れ（ポジティブサプライズ）・下振れ（ネガティブサプライズ）と株価への影響を示す図"
+                class="img-original-size" />
+        </div>
+    </section>
+
+    <section class="slide">
+      <h1>2‑6 【要注意】好決算でも下がるのはナゼ？（具体例）</h1>
+      <p>実績が良くても、ガイダンス（会社の将来予想）が市場の期待（コンセンサス）を下回ると、株価が大きく下がるケースがあります。</p>
+      <ol class="example-list" style="font-size: 0.9em; margin-top: 15px;">
+          <li>
+              <strong>安川電機 (6506) - 2024年4月:</strong><br>
+              2桁増益決算を発表。しかし、新年度の会社計画（ガイダンス）が市場予想（コンセンサス約665億円）を下回ったため、株価は1日で約21%急落（ストップ安水準）。
+          </li>
+          <li>
+              <strong>OSG (6136) - 2025年1月:</strong><br>
+              24年11月期決算と同時に発表された25年11月期のガイダンス（営業利益見通し210億円）が、市場コンセンサス（約235億円）を大きく下回り、株価は大幅続落。
+          </li>
+          <li>
+              <strong>ABCマート (2670) - 2025年4月:</strong><br>
+              25年2月期実績が市場予想を下回り、さらに26年2月期のガイダンスもコンセンサスを下回る内容だったため、株価は大幅続落。
+          </li>
+           <li>
+              <strong>サイゼリヤ (7581) - 2025年4月:</strong><br>
+              上半期決算が従来予想を下回り、通期予想も下方修正。市場コンセンサスを下回るガイダンスが嫌気され、株価は大幅続落。
+          </li>
+      </ol>
+      <p style="font-size: 0.9em; margin-top: 10px;">→ 決算発表では「実績」「ガイダンス」「市場コンセンサス」の３つを比較することが重要！</p>
+    </section>
+
+    <section class="slide">
+      <h1>3‑1 基本の「ローソク足」って何？</h1>
+      <p>1日の値動き（始値・高値・安値・終値）を1本の棒で表現。形や色で勢いが分かる。「陽線(白/赤)＝上がり調子」「陰線(黒/青)＝下がり調子」。</p>
+      <div class="svg-container">
+        <svg viewBox="0 0 250 140">
+            <title>ローソク足</title>
+            <line x1="50" y1="15" x2="50" y2="105" stroke="black" stroke-width="1"/>
+            <rect x="40" y="35" width="20" height="50" fill="#ffffff" stroke="black"/>
+            <text x="65" y="18" font-size="8">高値 (High)</text>
+            <line x1="60" y1="15" x2="50" y2="15"/>
+            <text x="65" y="40" font-size="8">終値 (Close)</text>
+            <line x1="60" y1="37" x2="50" y2="37"/>
+            <text x="65" y="90" font-size="8">始値 (Open)</text>
+            <line x1="60" y1="87" x2="50" y2="87"/>
+            <text x="65" y="110" font-size="8">安値 (Low)</text>
+            <line x1="60" y1="107" x2="50" y2="107"/>
+            <text x="50" y="125" text-anchor="middle" font-size="9" fill="#333">陽線</text>
+            <line x1="150" y1="15" x2="150" y2="105" stroke="black" stroke-width="1"/>
+            <rect x="140" y="35" width="20" height="50" fill="#000000" stroke="black"/>
+            <text x="165" y="18" font-size="8">高値 (High)</text>
+            <line x1="160" y1="15" x2="150" y2="15"/>
+             <text x="165" y="40" font-size="8">始値 (Open)</text>
+            <line x1="160" y1="37" x2="150" y2="37"/>
+            <text x="165" y="90" font-size="8">終値 (Close)</text>
+            <line x1="160" y1="87" x2="150" y2="87"/>
+            <text x="165" y="110" font-size="8">安値 (Low)</text>
+             <line x1="160" y1="107" x2="150" y2="107"/>
+            <text x="150" y="125" text-anchor="middle" font-size="9" fill="#333">陰線</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>3‑2 トレンドラインと移動平均線で流れを読む</h1>
+      <p>上昇トレンド＝高値・安値が切り上がる。線（トレンドライン）を引いてみよう。移動平均線（MA）が上向きなら上昇基調。流れに乗るのが基本。</p>
+      <div class="image-container">
+          <img src="trendline-ma-example.png"
+               alt="上昇トレンドチャートの例：サポートラインと上向きの移動平均線(20日・60日)"
+               style="max-width: 70%; height: auto;" />
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>3‑3 「出来高」は人気のバロメーター</h1>
+      <p>出来高＝株が売買された量。「価格上昇＋出来高増」は本物の買いかも。「価格上昇＋出来高減」は息切れ注意。価格と一緒に必ず確認。</p>
+      <div class="svg-container">
+        <svg viewBox="0 0 300 180">
+            <title>価格と出来高</title>
+            <line x1="30" y1="100" x2="280" y2="100" class="axis-line"/>
+            <line x1="30" y1="10" x2="30" y2="100" class="axis-line"/>
+            <text x="25" y="10" text-anchor="end" font-size="8">価格</text>
+            <polyline points="40,80 80,60 120,70 160,50 200,55 240,40" class="line trend-up" stroke="#5cb85c"/>
+            <text x="180" y="30" font-size="8" fill="#5cb85c">価格上昇</text>
+            <line x1="30" y1="170" x2="280" y2="170" class="axis-line"/>
+            <line x1="30" y1="110" x2="30" y2="170" class="axis-line"/>
+            <text x="25" y="110" text-anchor="end" font-size="8">出来高</text>
+            <text x="155" y="180" text-anchor="middle" font-size="8">時間</text>
+            <rect x="40" y="150" width="15" height="20" class="bar" fill="#ccc"/>
+            <rect x="80" y="140" width="15" height="30" class="bar" fill="#aaa"/>
+            <rect x="120" y="145" width="15" height="25" class="bar" fill="#bbb"/>
+            <rect x="160" y="130" width="15" height="40" class="bar" fill="#999"/>
+            <rect x="200" y="155" width="15" height="15" class="bar" fill="#ccc"/>
+            <rect x="240" y="160" width="15" height="10" class="bar" fill="#ddd"/>
+            <text x="160" y="125" font-size="8" fill="#5cb85c">出来高増 (買い本物)</text>
+            <text x="220" y="150" font-size="8" fill="#d9534f">出来高減 (ガス欠注意)</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>3‑4 チャートの罠：だまし上げと落ちるナイフ</h1>
+      <p>①出来高少ないのに急騰→すぐ下落（だまし上げ） ②大きく下がったから「安い」と買う→さらに下落（落ちるナイフ）。飛びつき買いは危険。</p>
+      <div class="image-container">
+          <img src="chart-traps-combined.png"
+               alt="チャートの罠の例：出来高を伴わない上昇（だまし上げ）と下落トレンド中の逆張り（落ちるナイフ）"
+               style="max-width: 100%; height: auto;" />
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>4‑1 市場のすみわけ：プライム、グロースって何？</h1>
+      <p>東証には会社の規模や特徴で市場が分かれている。プライム＝大型安定、スタンダード＝中堅、グロース＝新興成長。市場によって値動きのクセも違う。</p>
+      <div class="svg-container">
+        <svg viewBox="0 0 300 140">
+            <title>東証市場区分（簡略図）</title>
+            <rect x="125" y="5" width="50" height="20" fill="#eee" stroke="#ccc"/>
+            <text x="150" y="18" text-anchor="middle" font-size="8">東証</text>
+            <line x1="150" y1="25" x2="150" y2="45"/>
+            <line x1="75" y1="45" x2="225" y2="45"/>
+            <line x1="75" y1="45" x2="75" y2="65"/>
+            <rect x="50" y="65" width="50" height="40" fill="#aaddff" stroke="#005bab"/>
+            <text x="75" y="80" text-anchor="middle" font-size="8">プライム</text>
+            <text x="75" y="95" text-anchor="middle" font-size="7">(大型・流動性)</text>
+            <line x1="150" y1="45" x2="150" y2="65"/>
+            <rect x="125" y="65" width="50" height="40" fill="#e0e0e0" stroke="#aaa"/>
+            <text x="150" y="80" text-anchor="middle" font-size="8">スタンダード</text>
+             <text x="150" y="95" text-anchor="middle" font-size="7">(中堅)</text>
+            <line x1="225" y1="45" x2="225" y2="65"/>
+            <rect x="200" y="65" width="50" height="40" fill="#e8f5e9" stroke="#5cb85c"/>
+            <text x="225" y="80" text-anchor="middle" font-size="8">グロース</text>
+            <text x="225" y="95" text-anchor="middle" font-size="7">(成長企業)</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>4‑2 会社の大きさを見る「時価総額」</h1>
+      <p>時価総額＝株価×株数。会社の全体価値（値段）であり、規模を示す。大きい順に大型株＞中型株＞小型株。どのサイズの会社に投資するか考えよう。</p>
+      <div class="svg-container">
+          <svg viewBox="0 0 250 120">
+            <title>時価総額と企業規模</title>
+            <rect x="30" y="70" width="50" height="40" fill="#e8f5e9" stroke="#5cb85c"/>
+            <text x="55" y="117" text-anchor="middle" font-size="8">小型株</text>
+            <rect x="100" y="50" width="50" height="60" fill="#e0e0e0" stroke="#aaa"/>
+            <text x="125" y="117" text-anchor="middle" font-size="8">中型株</text>
+             <rect x="170" y="30" width="50" height="80" fill="#aaddff" stroke="#005bab"/>
+            <text x="195" y="117" text-anchor="middle" font-size="8">大型株</text>
+            <text x="125" y="15" text-anchor="middle" class="label">会社の大きさ（時価総額）</text>
+          </svg>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>4‑3 PERって何？ ～株価は利益の何倍か～</h1>
+      <p>PER＝株価÷1株利益。「会社の稼ぐ力（利益）に対して株価が割安か割高か」を見るモノサシ。低い方が割安に見えるが、成長期待も考慮必要。（例：ラーメン屋の値段が、年間の儲けの何年分か？）</p>
+       <div class="svg-container">
+            <svg viewBox="0 0 250 120">
+                <title>PERのイメージ（天秤）</title>
+                <polygon points="125,100 115,110 135,110" fill="#666"/>
+                <line x1="50" y1="80" x2="200" y2="80" stroke="#666" stroke-width="3"/>
+                <rect x="40" y="65" width="40" height="15" fill="#d9534f" rx="3"/>
+                <text x="60" y="76" text-anchor="middle" font-size="8" fill="white">株価</text>
+                <rect x="170" y="65" width="40" height="15" fill="#5cb85c" rx="3"/>
+                <text x="190" y="76" text-anchor="middle" font-size="8" fill="white">1株利益</text>
+                <text x="125" y="20" text-anchor="middle" class="label">PER = 株価 ÷ 1株利益</text>
+                <text x="60" y="55" text-anchor="middle" font-size="8">高い (割高?)</text>
+                 <text x="190" y="55" text-anchor="middle" font-size="8">低い (割安?)</text>
+                 <text x="125" y="95" text-anchor="middle" font-size="7">(成長性も考慮！)</text>
+            </svg>
+       </div>
+    </section>
+
+    <section class="slide">
+      <h1>4‑4 PBRって何？ ～会社の純資産と比べてどう？～</h1>
+      <p>PBR＝株価÷1株純資産。「会社の持っている本当の価値（純資産）に対して株価が何倍か」を見るモノサシ。1倍が基準。低いと割安に見えるが、資産の中身も大事。（例：家の値段が、土地建物の価値と比べてどうか？）</p>
+       <div class="svg-container">
+            <svg viewBox="0 0 300 120">
+                <title>PBRのイメージ（家と値札）</title>
+                <rect x="30" y="50" width="60" height="40" fill="#e0e0e0" stroke="#aaa"/>
+                <polygon points="30,50 90,50 60,30" fill="#bbb" stroke="#aaa"/>
+                <text x="60" y="75" text-anchor="middle" font-size="8">純資産</text>
+                <rect x="40" y="10" width="40" height="15" fill="#f0ad4e" rx="2"/>
+                <text x="60" y="21" text-anchor="middle" font-size="8">株価</text>
+                <text x="60" y="105" text-anchor="middle" font-size="9">PBR = 1倍 (適正?)</text>
+                <rect x="120" y="50" width="60" height="40" fill="#e0e0e0" stroke="#aaa"/>
+                <polygon points="120,50 180,50 150,30" fill="#bbb" stroke="#aaa"/>
+                <text x="150" y="75" text-anchor="middle" font-size="8">純資産</text>
+                 <rect x="135" y="15" width="30" height="12" fill="#f0ad4e" rx="2" transform="rotate(-10 150 21)"/>
+                 <text x="150" y="25" text-anchor="middle" font-size="7" transform="rotate(-10 150 21)">株価</text>
+                <text x="150" y="105" text-anchor="middle" font-size="9" fill="#5cb85c">PBR < 1倍 (割安?)</text>
+                <rect x="210" y="50" width="60" height="40" fill="#e0e0e0" stroke="#aaa"/>
+                <polygon points="210,50 270,50 240,30" fill="#bbb" stroke="#aaa"/>
+                 <text x="240" y="75" text-anchor="middle" font-size="8">純資産</text>
+                 <rect x="220" y="5" width="50" height="18" fill="#f0ad4e" rx="2" transform="rotate(5 245 14)"/>
+                 <text x="245" y="17" text-anchor="middle" font-size="9" transform="rotate(5 245 14)">株価</text>
+                <text x="240" y="105" text-anchor="middle" font-size="9" fill="#d9534f">PBR > 1倍 (割高?)</text>
+            </svg>
+       </div>
+    </section>
+
+    <section class="slide">
+      <h1>4‑5 ROEって何？ ～効率よく稼げている？～</h1>
+      <p>ROE＝利益÷自己資本。「株主から集めたお金を使って、どれだけ上手に利益を生み出しているか（資本効率）」を見る指標。高いほど効率が良いとされる（目安8～10%超）。</p>
+        <div class="svg-container">
+            <svg viewBox="0 0 250 120">
+                <title>ROEのイメージ（種と実）</title>
+                <line x1="60" y1="100" x2="60" y2="60" stroke="#8B4513" stroke-width="4"/>
+                <ellipse cx="60" cy="50" rx="30" ry="25" fill="#90EE90"/>
+                <circle cx="50" cy="45" r="4" fill="#FF6347"/>
+                 <circle cx="70" cy="55" r="4" fill="#FF6347"/>
+                 <rect x="45" y="100" width="30" height="10" fill="#DAA520" rx="3"/>
+                 <text x="60" y="107" text-anchor="middle" font-size="7">自己資本</text>
+                 <text x="60" y="20" text-anchor="middle" font-size="9">ROE 低 (効率悪い)</text>
+                <line x1="190" y1="100" x2="190" y2="60" stroke="#8B4513" stroke-width="4"/>
+                <ellipse cx="190" cy="50" rx="30" ry="25" fill="#90EE90"/>
+                <circle cx="180" cy="40" r="4" fill="#FF6347"/>
+                <circle cx="200" cy="40" r="4" fill="#FF6347"/>
+                <circle cx="175" cy="50" r="4" fill="#FF6347"/>
+                <circle cx="190" cy="55" r="4" fill="#FF6347"/>
+                 <circle cx="205" cy="50" r="4" fill="#FF6347"/>
+                 <rect x="175" y="100" width="30" height="10" fill="#DAA520" rx="3"/>
+                 <text x="190" y="107" text-anchor="middle" font-size="7">自己資本</text>
+                 <text x="190" y="20" text-anchor="middle" font-size="9" fill="#5cb85c">ROE 高 (効率良い)</text>
+                 <text x="190" y="70" text-anchor="middle" font-size="8">利益</text>
+                  <path d="M 190 95 V 75" stroke="#333" stroke-dasharray="2 2"/>
+                   <polygon points="188,75 190,72 192,75" fill="#333"/>
+            </svg>
+        </div>
+    </section>
+
+    <section class="slide">
+      <h1>4‑6 配当利回りって何？ ～持っているともらえるお金～</h1>
+      <p>配当利回り＝年間配当÷株価。「株を持っていると、株価に対して年間どれくらいの配当金がもらえるか」を示す。銀行預金の利率のようなもの。高い方が魅力的だが、無理な配当は続かないことも。</p>
+       <div class="svg-container">
+            <svg viewBox="0 0 200 120">
+                <title>配当利回りのイメージ</title>
+                <ellipse cx="70" cy="100" rx="30" ry="5" fill="#FFD700" stroke="#B8860B"/>
+                <rect x="40" y="55" width="60" height="45" fill="#FFD700" stroke="#B8860B"/>
+                <ellipse cx="70" cy="55" rx="30" ry="5" fill="#FFEC8B" stroke="#B8860B"/>
+                <text x="70" y="80" text-anchor="middle" font-size="8">株価</text>
+                <circle cx="140" cy="95" r="8" fill="#FF8C00" stroke="#8B4513"/>
+                <text x="140" y="98" text-anchor="middle" font-size="7" fill="white">配</text>
+                 <circle cx="155" cy="80" r="8" fill="#FF8C00" stroke="#8B4513"/>
+                 <text x="155" y="83" text-anchor="middle" font-size="7" fill="white">当</text>
+                <path d="M 100 70 Q 120 80 135 90" fill="none" stroke="#666" stroke-dasharray="3 2"/>
+                <polygon points="132,93 135,90 138,90" fill="#666"/>
+                <text x="100" y="30" text-anchor="middle" class="label">配当利回り (%) = 配当金 ÷ 株価</text>
+                <text x="100" y="45" text-anchor="middle" font-size="8">(銀行預金の利率みたいなもの)</text>
+            </svg>
+       </div>
+    </section>
+
+    <section class="slide">
+      <h1>4‑7 主要ファンダ指標 まとめ</h1>
+      <p>今見た指標（時価総額、PER、PBR、ROE、配当利回り）の簡単な意味と目安を一覧で確認。※ただし、数字は常に業界や成長段階と比較して判断！</p>
+        <div class="table-container">
+            <table class="data-table summary-table">
+                <thead>
+                    <tr><th>指標</th><th>簡単な意味 / 見るポイント</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>時価総額</td><td>会社の規模。大きいほど安定、小さいほど成長期待？</td></tr>
+                    <tr><td>PER</td><td>利益に対して株価が割安か。低い方が割安に見えるが成長性も確認。</td></tr>
+                    <tr><td>PBR</td><td>純資産に対して株価が割安か。1倍が基準だが業種差あり。</td></tr>
+                    <tr><td>ROE</td><td>自己資本でどれだけ効率よく稼いでいるか。高いほど良い傾向。</td></tr>
+                    <tr><td>配当利回り</td><td>株価に対する配当金の割合。インカム狙いなら重要。</td></tr>
+                </tbody>
+                <tfoot>
+                    <tr><td colspan="2" style="text-align: center; font-size:0.9em;">これらはあくまでモノサシ。単独でなく、組み合わせて多角的に見ることが重要！</td></tr>
+                </tfoot>
+            </table>
+       </div>
+    </section>
+
+    <section class="slide">
+      <h1>4‑8 値動き重視？安定重視？ テーマ株 vs 安定株</h1>
+      <p>テーマ株：流行に乗って大きく値上がり期待（変動大）／安定株：配当や安定成長期待（変動小）。自分の目的に合わせて選ぼう。</p>
+      <div class="svg-container">
+         <svg viewBox="0 0 300 170">
+            <title>テーマ株 vs 安定株 散布図</title>
+            <line x1="50" y1="140" x2="280" y2="140" class="axis-line"/>
+            <line x1="50" y1="10" x2="50" y2="140" class="axis-line"/>
+            <text x="285" y="145" font-size="8">変動率 (ボラ) →</text>
+            <text x="45" y="10" text-anchor="end" font-size="8">成長率/リターン ↑</text>
+            <ellipse cx="220" cy="55" rx="40" ry="30" fill="rgba(217, 83, 79, 0.1)" stroke="#d9534f" stroke-dasharray="4 2"/>
+            <text x="220" y="55" text-anchor="middle" font-size="9" fill="#d9534f">テーマ株</text>
+            <text x="220" y="70" text-anchor="middle" font-size="7" fill="#d9534f">(高リスク・高リターン)</text>
+            <circle cx="210" cy="45" r="2" fill="#d9534f"/>
+            <circle cx="230" cy="65" r="2" fill="#d9534f"/>
+            <circle cx="240" cy="35" r="2" fill="#d9534f"/>
+            <ellipse cx="100" cy="105" rx="40" ry="30" fill="rgba(92, 184, 92, 0.1)" stroke="#5cb85c" stroke-dasharray="4 2"/>
+            <text x="100" y="105" text-anchor="middle" font-size="9" fill="#5cb85c">安定株</text>
+            <text x="100" y="120" text-anchor="middle" font-size="7" fill="#5cb85c">(低リスク・安定リターン/配当)</text>
+            <circle cx="90" cy="110" r="2" fill="#5cb85c"/>
+            <circle cx="110" cy="100" r="2" fill="#5cb85c"/>
+            <circle cx="105" cy="115" r="2" fill="#5cb85c"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>4‑9 リスクを抑える「分散投資」の考え方</h1>
+      <p>「卵は一つのカゴに盛るな」。①業種（ITだけ、食品だけは危険）②国（日本だけも危険）③時間（買うタイミングをずらす）の3つの分散が基本。</p>
+      <div class="svg-container">
+        <svg viewBox="0 0 200 130">
+            <title>分散投資の3軸</title>
+            <polygon points="50,40 130,40 150,60 70,60" fill="#aaddff" stroke="#005bab"/>
+            <polygon points="70,60 150,60 150,110 70,110" fill="#ceeaff" stroke="#005bab"/>
+            <polygon points="50,40 70,60 70,110 50,90" fill="#e6f7ff" stroke="#005bab"/>
+            <text x="90" y="35" text-anchor="middle" font-size="8">業種分散</text>
+            <text x="155" y="85" font-size="8">国分散</text>
+            <text x="45" y="70" text-anchor="middle" font-size="8" writing-mode="vertical-rl">時間分散</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>4‑10 銘柄選びの失敗あるある</h1>
+      <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+          <div style="text-align: center; max-width: 45%;">
+               <div class="svg-container" style="height: 50px;">
+                   <svg viewBox="0 0 100 50">
+                       <polygon points="50,5 95,45 5,45" fill="#f0ad4e"/>
+                       <text x="50" y="33" text-anchor="middle" font-size="18" fill="#fff">!</text>
+                   </svg>
+               </div>
+              <p>①SNSで話題の株に全集中<br>→ テーマ終了で大損</p>
+          </div>
+          <div style="text-align: center; max-width: 45%;">
+              <div class="svg-container" style="height: 50px;">
+                 <svg viewBox="0 0 100 50">
+                       <polygon points="50,5 95,45 5,45" fill="#f0ad4e"/>
+                       <text x="50" y="33" text-anchor="middle" font-size="18" fill="#fff">!</text>
+                   </svg>
+               </div>
+              <p>②PERが低いだけで飛びつく<br>→ 実は業績悪化中</p>
+          </div>
+      </div>
+       <p style="text-align:center; margin-top:15px;">③一つの指標だけで判断しないこと！</p>
+    </section>
+
+    <section class="slide">
+      <h1>5‑1 なぜ買う？いつ買う？ファンダ×テクニカル</h1>
+      <p>ファンダメンタル（会社の価値）＝「買う理由」、テクニカル（チャート）＝「今買うタイミングか」。両方が揃って初めてエントリーを検討。</p>
+      <div class="svg-container">
+        <svg viewBox="0 0 250 120">
+          <title>ファンダメンタルとテクニカルの重なり</title>
+          <circle cx="90" cy="60" r="45" fill="rgba(91, 192, 222, 0.5)" class="venn-circle"/>
+          <text x="90" y="55" text-anchor="middle" font-size="9">ファンダメンタル</text>
+          <text x="90" y="70" text-anchor="middle" font-size="7">(買う理由)</text>
+          <circle cx="160" cy="60" r="45" fill="rgba(240, 173, 78, 0.5)" class="venn-circle"/>
+          <text x="160" y="55" text-anchor="middle" font-size="9">テクニカル</text>
+          <text x="160" y="70" text-anchor="middle" font-size="7">(今買う理由)</text>
+           <text x="125" y="63" text-anchor="middle" font-weight="bold" font-size="10">エントリー検討</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>5‑2 出口戦略：利確と損切りのルールを決める</h1>
+      <p>「ここまで上がったら売る（利確）」「ここまで下がったら諦める（損切り）」を事前に決める。感情に流されず、ルールを守ることが重要。（例：損切り-5%、利確+10%）</p>
+      <div class="svg-container">
+         <svg viewBox="0 0 300 140">
+            <title>利確・損切りライン</title>
+            <line x1="30" y1="120" x2="280" y2="120" class="axis-line"/>
+            <line x1="30" y1="10" x2="30" y2="120" class="axis-line"/>
+            <polyline points="40,90 80,70 120,80 140,60" class="line" stroke="#aaa"/>
+            <circle cx="140" cy="60" r="3" fill="#005bab"/>
+            <text x="145" y="55" font-size="7" fill="#005bab">エントリー (Buy)</text>
+            <line x1="130" y1="40" x2="280" y2="40" stroke="#5cb85c" stroke-width="1" stroke-dasharray="4 2"/>
+            <text x="200" y="35" font-size="8" fill="#5cb85c">利確ライン (+10%)</text>
+            <text x="100" y="45" font-size="7">RR: 2</text>
+            <line x1="130" y1="80" x2="280" y2="80" stroke="#d9534f" stroke-width="1" stroke-dasharray="4 2"/>
+            <text x="200" y="90" font-size="8" fill="#d9534f">損切りライン (-5%)</text>
+             <text x="100" y="85" font-size="7">RR: 1</text>
+             <polyline points="140,60 180,50 220,40" class="line" stroke="#5cb85c"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>5‑3 陥りやすい心理の罠：「早く利確、損切り遅く」</h1>
+      <p>人は利益はすぐ確定したがり、損失は認めたがらない（プロスペクト理論）。また、上がり続ける株に乗り遅れたくない（FOMO）感情も。ルールで感情をコントロール！</p>
+      <div class="svg-container">
+         <svg viewBox="0 0 300 150">
+            <title>感情曲線とプロスペクト理論</title>
+            <line x1="150" y1="10" x2="150" y2="140" class="axis-line"/>
+            <line x1="20" y1="75" x2="280" y2="75" class="axis-line"/>
+            <text x="15" y="72" font-size="8">損失</text>
+            <text x="285" y="72" font-size="8">利益</text>
+            <text x="155" y="15" font-size="8">満足↑</text>
+            <text x="155" y="145" font-size="8">苦痛↓</text>
+            <path d="M 150 75 Q 200 50, 280 40" stroke="#5cb85c" stroke-width="2" fill="none"/>
+            <path d="M 150 75 Q 100 110, 20 130" stroke="#d9534f" stroke-width="2" fill="none"/>
+            <text x="215" y="55" font-size="7" fill="#5cb85c">利益確定早い</text>
+            <text x="85" y="125" font-size="7" fill="#d9534f">損失確定遅い</text>
+            <circle cx="250" cy="30" r="12" fill="rgba(240, 173, 78, 0.3)"/>
+            <text x="250" y="33" text-anchor="middle" font-size="7">FOMO</text>
+            <text x="150" y="100" text-anchor="middle" font-size="9" font-weight="bold">感情 ＜ ルール</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>5‑4 ナンピン買い下がりは諸刃の剣</h1>
+      <p>株価が下がった時に買い増して平均単価を下げる「ナンピン」。一見有利に見えるが、下落トレンドでは傷口を広げるだけになることも。</p>
+      <div class="table-container">
+         <table class="data-table">
+            <thead>
+                <tr>
+                    <th>回数</th>
+                    <th>購入価格</th>
+                    <th>購入株数(例)</th>
+                    <th>平均取得単価</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1回目</td>
+                    <td class="text-right">¥1,000</td>
+                    <td class="text-right">100 株</td>
+                    <td class="text-right">¥1,000.00</td>
+                </tr>
+                 <tr>
+                    <td>2回目</td>
+                    <td class="text-right">¥800 <span style="font-size: 0.8em;">(-20%)</span></td>
+                    <td class="text-right">100 株</td>
+                    <td class="text-right">¥900.00</td>
+                </tr>
+                 <tr>
+                    <td>3回目</td>
+                    <td class="text-right">¥640 <span style="font-size: 0.8em;">(-20%)</span></td>
+                    <td class="text-right">100 株</td>
+                    <td class="text-right">¥813.33</td>
+                </tr>
+            </tbody>
+             <tfoot>
+                <tr>
+                    <td colspan="4" style="font-size: 0.9em; text-align:center; color: #d9534f;">
+                        注意: 平均単価の低下効果は限定的。下落トレンド継続時は損失拡大リスク。
+                    </td>
+                </tr>
+            </tfoot>
+         </table>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>5‑5 売買判断の失敗あるある</h1>
+      <div class="image-container">
+          <img src="trading-mistakes-cartoon.png"
+               alt="売買判断の失敗例：チキン利食いと塩漬けのイラスト"
+               style="max-width: 100%; height: auto;" />
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>6‑1 小型株投資の魅力と注意点</h1>
+      <p>機関投資家が参入しにくい小型株は、個人が情報や分析で優位に立てる可能性あり。ただし、流動性が低い（売買しにくい）リスクも。出口戦略が重要。</p>
+      <div class="svg-container">
+        <svg viewBox="0 0 300 150">
+            <title>東証時価総額ヒストグラム（イメージ）</title>
+            <line x1="30" y1="130" x2="280" y2="130" class="axis-line"/>
+            <line x1="30" y1="10" x2="30" y2="130" class="axis-line"/>
+            <text x="155" y="145" text-anchor="middle" font-size="8">時価総額 → (大)</text>
+            <text x="25" y="10" text-anchor="end" font-size="8">企業数 ↑</text>
+            <rect x="40" y="50" width="30" height="80" class="bar" fill="#e8f5e9"/>
+            <rect x="70" y="70" width="30" height="60" class="bar" fill="#e0e0e0"/>
+            <rect x="100" y="90" width="30" height="40" class="bar" fill="#e0e0e0"/>
+            <rect x="130" y="100" width="30" height="30" class="bar" fill="#aaddff"/>
+            <rect x="160" y="110" width="30" height="20" class="bar" fill="#aaddff"/>
+            <rect x="190" y="115" width="30" height="15" class="bar" fill="#aaddff"/>
+             <text x="55" y="45" text-anchor="middle" font-size="7">小型株ゾーン</text>
+             <text x="55" y="35" text-anchor="middle" font-size="7">(個人チャンス?)</text>
+             <line x1="70" y1="20" x2="70" y2="50" stroke="#ccc" stroke-dasharray="2 2"/>
+             <text x="75" y="30" font-size="7" fill="#aaa">(例: 300億円)</text>
+             <text x="175" y="105" text-anchor="middle" font-size="7">大型株ゾーン</text>
+             <text x="175" y="95" text-anchor="middle" font-size="7">(機関投資家メイン)</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>6‑2 「待つ」も戦略：キャッシュポジションの調整</h1>
+      <p>相場の方向感が分からない時や、割高感がある時は、無理に投資せず現金比率を高める。守りを固めつつ、次のチャンスに備える資金を温存。</p>
+      <div class="svg-container">
+        <svg viewBox="0 0 300 120">
+            <title>キャッシュ比率フローチャート</title>
+            <rect x="20" y="40" width="100" height="40" rx="5" ry="5" fill="#e8f5e9" stroke="#5cb85c"/>
+            <text x="70" y="58" text-anchor="middle" font-size="8">上昇トレンド/好機</text>
+            <text x="70" y="72" text-anchor="middle" font-size="7">(株 70-90%, 現金 10-30%)</text>
+            <rect x="180" y="40" width="100" height="45" rx="5" ry="5" fill="#fff3e0" stroke="#f0ad4e"/>
+            <text x="230" y="55" text-anchor="middle" font-size="8">方向感喪失/調整</text>
+            <text x="230" y="68" text-anchor="middle" font-size="8" fill="#d9534f">⇒ “待つ”</text>
+            <text x="230" y="81" text-anchor="middle" font-size="7">(現金 50-80%, 株 20-50%)</text>
+            <path d="M 120 60 H 150" stroke="#333" stroke-width="1.5"/>
+            <polygon points="147,58 150,60 147,62" fill="#333"/>
+            <text x="135" y="55" text-anchor="middle" font-size="7">相場変化</text>
+            <path d="M 180 60 C 165 50, 135 50, 120 60" stroke="#333" stroke-width="1.5" stroke-dasharray="3 2" fill="none"/>
+            <polygon points="123,58 120,60 123,62" fill="#333"/>
+            <text x="150" y="45" text-anchor="middle" font-size="7">好転?</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>6‑3 時間分散：ドルコスト平均法の活用</h1>
+      <p>毎月決まった額を買い続ける「ドルコスト平均法」。株価が高い時は少なく、安い時は多く買えるため、平均購入単価が平準化されやすい。高値掴みリスクを軽減。</p>
+      <div class="svg-container">
+        <svg viewBox="0 0 300 150">
+            <title>ドルコスト平均法（積立グラフ）</title>
+            <line x1="30" y1="130" x2="280" y2="130" class="axis-line"/>
+            <line x1="30" y1="10" x2="30" y2="130" class="axis-line"/>
+            <text x="155" y="145" text-anchor="middle" font-size="8">時間 →</text>
+            <text x="25" y="10" text-anchor="end" font-size="8">価格/単価 ↑</text>
+            <polyline points="40,80 80,100 120,70 160,90 200,60 240,80" class="line" stroke="#aaa" stroke-dasharray="3 2"/>
+            <text x="140" y="50" font-size="7" fill="#aaa">株価変動</text>
+            <circle cx="40" cy="80" r="3" fill="#005bab"/> <text x="40" y="75" font-size="7">買</text>
+            <circle cx="80" cy="100" r="3" fill="#005bab"/> <text x="80" y="95" font-size="7">買</text>
+            <circle cx="120" cy="70" r="3" fill="#005bab"/> <text x="120" y="65" font-size="7">買</text>
+            <circle cx="160" cy="90" r="3" fill="#005bab"/> <text x="160" y="85" font-size="7">買</text>
+            <circle cx="200" cy="60" r="3" fill="#005bab"/> <text x="200" y="55" font-size="7">買</text>
+            <circle cx="240" cy="80" r="3" fill="#005bab"/> <text x="240" y="75" font-size="7">買</text>
+            <line x1="40" y1="83" x2="240" y2="83" class="line" stroke="#f0ad4e" stroke-width="2"/>
+            <text x="160" y="115" font-size="8" fill="#f0ad4e">平均取得単価 (平滑化される傾向)</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>6‑4 振り返りが成長の鍵：年次リターンの記録</h1>
+      <p>毎年、自分の投資成績（リターン）を記録・評価する。「なぜ儲かったか」「なぜ損したか」を分析し、次の年の戦略に活かす。PDCAサイクルを回す。</p>
+      <div class="table-container">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>年</th>
+                    <th>年間リターン</th>
+                    <th>メモ / 分析</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Year 1</td>
+                    <td class="text-right plus">+ 8%</td>
+                    <td>市場好調に乗る</td>
+                </tr>
+                 <tr>
+                    <td>Year 2</td>
+                    <td class="text-right minus">- 5%</td>
+                    <td>▲特定セクターの下落影響大。分散見直し。</td>
+                </tr>
+                 <tr>
+                    <td>Year 3</td>
+                    <td class="text-right plus">+ 12%</td>
+                    <td>ポートフォリオ入替成功。</td>
+                </tr>
+                <tr>
+                    <td>Year 4</td>
+                    <td class="text-right plus">+ 10%</td>
+                    <td>安定成長。</td>
+                </tr>
+                 <tr>
+                    <td>Year 5</td>
+                    <td class="text-right plus">+ 15%</td>
+                    <td>好調維持。一部利確。</td>
+                </tr>
+            </tbody>
+             <tfoot>
+                <tr>
+                    <td colspan="3" style="font-size: 0.9em; text-align:center;">
+                        記録 → 分析 → 改善 のサイクルを回すことが重要
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>7‑1 投資で失敗しないためのチェックリスト10</h1>
+      <div class="table-container">
+        <table class="checklist-table">
+            <tbody>
+                <tr><td>☐</td><td>1) 投資の目的・目標を言語化しているか？</td></tr>
+                <tr><td>☐</td><td>2) 市場参加者（機関、個人など）の特徴を理解しているか？</td></tr>
+                <tr><td>☐</td><td>3) 自分が戦う土俵（時間軸、市場）を意識しているか？</td></tr>
+                <tr><td>☐</td><td>4) マクロ経済や金利の動向を無視していないか？</td></tr>
+                <tr><td>☐</td><td>5) ファンダメンタル（企業価値）とテクニカル（タイミング）の両方を見ているか？</td></tr>
+                <tr><td>☐</td><td>6) 出来高を伴った値動きか確認しているか？</td></tr>
+                <tr><td>☐</td><td>7) 業種・国・時間などで分散投資を心がけているか？</td></tr>
+                <tr><td>☐</td><td>8) エントリー前に利確・損切りラインを決めているか？（逆指値含む）</td></tr>
+                <tr><td>☐</td><td>9) プロスペクト理論やFOMOなど、自分の心理的な罠を認識しているか？</td></tr>
+                <tr><td>☐</td><td>10) 定期的に（最低年1回）リターンを記録し、振り返っているか？</td></tr>
+            </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>7‑2 これからの学習ロードマップ</h1>
+      <div class="svg-container">
+         <svg viewBox="0 0 300 120">
+            <title>学習ロードマップ</title>
+            <rect x="20" y="15" width="260" height="25" rx="5" ry="5" fill="#e6f7ff" stroke="#005bab"/>
+            <text x="150" y="31" text-anchor="middle" font-size="8">ステップ1：公式資料を読む (東証, 企業IR)</text>
+            <line x1="150" y1="40" x2="150" y2="50" stroke="#333" stroke-width="1.5"/>
+            <polygon points="147,50 150,55 153,50" fill="#333"/>
+             <rect x="20" y="55" width="260" height="25" rx="5" ry="5" fill="#e8f5e9" stroke="#5cb85c"/>
+            <text x="150" y="71" text-anchor="middle" font-size="8">ステップ2：少額で実践してみる (記録と反省)</text>
+            <line x1="150" y1="80" x2="150" y2="90" stroke="#333" stroke-width="1.5"/>
+            <polygon points="147,90 150,95 153,90" fill="#333"/>
+             <rect x="20" y="95" width="260" height="25" rx="5" ry="5" fill="#fff3e0" stroke="#f0ad4e"/>
+            <text x="150" y="111" text-anchor="middle" font-size="8">ステップ3：本やセミナーで知識を深める</text>
+        </svg>
+      </div>
+    </section>
+
+    </div> <div class="slide-navigation">
+    <button id="prevBtn" title="前へ (←キー/↑キー)">前へ</button>
+    <span id="slideCounter"></span>
+    <button id="nextBtn" title="次へ (→キー/↓キー/スペースキー)">次へ</button>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const slideCounter = document.getElementById('slideCounter');
+    let currentSlideIndex = 0;
+    const totalSlides = slides.length; // 自動で33になる
+
+    function showSlide(index) {
+        if (index < 0 || index >= totalSlides) {
+            return;
+        }
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+        slides[index].classList.add('active');
+        currentSlideIndex = index;
+        prevBtn.disabled = (currentSlideIndex === 0);
+        nextBtn.disabled = (currentSlideIndex === totalSlides - 1);
+        if (slideCounter) {
+            slideCounter.textContent = `${currentSlideIndex + 1} / ${totalSlides}`;
+        }
+         window.scrollTo(0, 0);
+    }
+
+    prevBtn.addEventListener('click', () => {
+        showSlide(currentSlideIndex - 1);
+    });
+    nextBtn.addEventListener('click', () => {
+        showSlide(currentSlideIndex + 1);
+    });
+    document.addEventListener('keydown', (event) => {
+        if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+            return;
+        }
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+             event.preventDefault();
+            showSlide(currentSlideIndex - 1);
+        } else if (event.key === 'ArrowRight' || event.key === 'ArrowDown' || event.key === ' ') {
+             event.preventDefault();
+            showSlide(currentSlideIndex + 1);
+        }
+    });
+
+    showSlide(currentSlideIndex);
+});
+</script>
+
+</body>
+</html>

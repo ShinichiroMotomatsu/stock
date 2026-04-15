@@ -1,393 +1,398 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RAKUS AI Strategy | ラクス AI戦略サイト（構想版）</title>
+  <title>ラクス AI Strategy Room</title>
   <style>
     :root {
-      --rakus-orange: #ff8200;
-      --rakus-dark: #2c2c2c;
-      --rakus-gray: #f5f6f8;
-      --rakus-border: #e4e6eb;
-      --rakus-blue: #1e5eff;
-      --text: #222;
-      --max: 1120px;
+      --rakus-orange: #f58220;
+      --rakus-orange-weak: #fff4e9;
+      --rakus-text: #1e1f22;
+      --rakus-sub: #555;
+      --rakus-line: #e5e7ec;
+      --rakus-bg: #fafbfc;
+      --rakus-link: #1b5ad9;
+      --max: 1160px;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
-      color: var(--text);
+      color: var(--rakus-text);
       background: #fff;
-      line-height: 1.65;
+      font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      line-height: 1.7;
     }
-    a { color: var(--rakus-blue); text-decoration: none; }
+    a { color: var(--rakus-link); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    .topbar {
-      border-top: 6px solid var(--rakus-orange);
-      background: #fff;
-      border-bottom: 1px solid var(--rakus-border);
+    .header {
       position: sticky;
       top: 0;
-      z-index: 30;
+      z-index: 10;
+      background: #fff;
+      border-top: 6px solid var(--rakus-orange);
+      border-bottom: 1px solid var(--rakus-line);
     }
-    .topbar-inner {
+    .header-inner {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 14px 20px;
+      padding: 12px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
+      gap: 12px;
     }
-    .brand { font-size: 1.05rem; font-weight: 700; color: var(--rakus-dark); }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      border: 1px solid #ffd4a6;
-      color: #a34e00;
-      background: #fff8ef;
-      border-radius: 999px;
+    .logo {
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      font-size: 1.05rem;
+    }
+    .draft {
+      border: 1px solid #ffd6b3;
+      background: #fff8f2;
+      color: #9b4b00;
       padding: 2px 10px;
-      font-size: 0.78rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
       font-weight: 700;
     }
 
     .hero {
-      background: linear-gradient(135deg, #fff, #fff6ec);
-      border-bottom: 1px solid var(--rakus-border);
+      background: linear-gradient(180deg, #fff 0%, #fff8f2 100%);
+      border-bottom: 1px solid var(--rakus-line);
     }
     .hero-inner {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 48px 20px 44px;
+      padding: 46px 20px;
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 28px;
-      align-items: center;
+      gap: 20px;
+      grid-template-columns: 1.15fr 1fr;
+      align-items: start;
     }
     .hero h1 {
-      margin: 0 0 14px;
-      line-height: 1.3;
-      font-size: clamp(1.5rem, 2.7vw, 2.35rem);
-      color: #1b1b1b;
+      margin: 0 0 10px;
+      font-size: clamp(1.55rem, 2.7vw, 2.35rem);
+      line-height: 1.35;
     }
-    .hero p { margin: 0 0 10px; color: #444; }
-    .hero .note {
-      font-size: .9rem;
-      background: #fff;
-      border: 1px solid #ffe4c3;
+    .hero p { margin: 8px 0; color: var(--rakus-sub); }
+    .principle {
+      border: 1px solid #ffd9bb;
       border-left: 4px solid var(--rakus-orange);
-      padding: 10px 12px;
       border-radius: 8px;
-    }
-
-    .hero-panel {
+      padding: 10px 12px;
       background: #fff;
-      border: 1px solid var(--rakus-border);
-      border-radius: 12px;
-      padding: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      color: #55311a;
+      font-size: 0.93rem;
     }
-    .hero-panel h3 { margin: 0 0 8px; font-size: 1rem; }
-    .hero-panel ul { margin: 0; padding-left: 18px; }
-    .hero-panel li { margin-bottom: 6px; }
 
-    .audience-switch {
+    .panel {
+      border: 1px solid var(--rakus-line);
+      border-radius: 12px;
+      background: #fff;
+      padding: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    }
+    .panel h3 { margin: 0 0 8px; font-size: 1rem; }
+    .panel ul { margin: 0; padding-left: 18px; }
+    .panel li { margin: 6px 0; }
+
+    .tabs-wrap {
+      background: #fff;
+      border-bottom: 1px solid var(--rakus-line);
+    }
+    .tabs {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 20px;
+      padding: 16px 20px;
       display: flex;
       gap: 10px;
-      border-bottom: 1px solid var(--rakus-border);
-      background: #fff;
+      flex-wrap: wrap;
     }
-    .switch-btn {
-      border: 1px solid var(--rakus-border);
+    .tab-btn {
+      border: 1px solid var(--rakus-line);
       background: #fff;
-      padding: 10px 14px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 700;
       color: #444;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: 10px 14px;
+      cursor: pointer;
     }
-    .switch-btn.active {
+    .tab-btn.active {
       border-color: var(--rakus-orange);
-      background: #fff7ee;
-      color: #7c3c00;
+      background: var(--rakus-orange-weak);
+      color: #8b4200;
     }
 
     main {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 28px 20px 52px;
+      padding: 28px 20px 56px;
     }
+    .view { display: none; }
+    .view.active { display: block; }
+
     section { margin-bottom: 30px; }
     h2 {
-      font-size: 1.4rem;
-      margin: 0 0 12px;
+      margin: 0 0 10px;
+      font-size: 1.42rem;
+      border-bottom: 2px solid #ffd9bb;
       padding-bottom: 8px;
-      border-bottom: 2px solid #ffd7af;
-      color: #222;
     }
-    h3 { margin: 12px 0 8px; font-size: 1.06rem; }
+    h3 { margin: 8px 0 6px; font-size: 1.03rem; }
 
-    .grid-2 {
+    .grid2 {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
     }
     .card {
-      border: 1px solid var(--rakus-border);
+      border: 1px solid var(--rakus-line);
       border-radius: 10px;
-      padding: 14px;
       background: #fff;
+      padding: 14px;
     }
-    .card strong { color: #222; }
     .tag {
       display: inline-block;
-      font-size: .75rem;
-      padding: 2px 8px;
+      font-size: .72rem;
+      color: #2a4b97;
+      background: #f3f6ff;
+      border: 1px solid #dce4ff;
       border-radius: 999px;
-      border: 1px solid #d8dff3;
-      color: #3653a3;
-      background: #f4f7ff;
+      padding: 2px 8px;
       margin-bottom: 6px;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 12px;
-    }
-    .timeline-item {
-      border-left: 4px solid var(--rakus-orange);
-      background: #fff;
-      border: 1px solid var(--rakus-border);
-      border-left-width: 4px;
-      border-radius: 8px;
-      padding: 10px 12px;
-    }
-    .timeline-item .date {
-      font-size: .82rem;
-      color: #555;
       font-weight: 700;
     }
 
-    .roadmap {
-      overflow-x: auto;
-      border: 1px solid var(--rakus-border);
-      border-radius: 10px;
+    .timeline { display: grid; gap: 10px; }
+    .event {
+      border: 1px solid var(--rakus-line);
+      border-left: 4px solid var(--rakus-orange);
+      border-radius: 8px;
+      padding: 10px 12px;
+      background: #fff;
     }
+    .date {
+      font-size: 0.8rem;
+      color: #666;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
       min-width: 760px;
       background: #fff;
+      border: 1px solid var(--rakus-line);
     }
     th, td {
-      border-bottom: 1px solid var(--rakus-border);
+      border-bottom: 1px solid var(--rakus-line);
       text-align: left;
       vertical-align: top;
-      padding: 11px 12px;
-      font-size: .94rem;
+      padding: 10px 12px;
+      font-size: .93rem;
     }
     th {
-      background: #fff8ef;
-      color: #6b3b00;
-      font-size: .87rem;
       white-space: nowrap;
-    }
-
-    .panel {
-      background: var(--rakus-gray);
-      border: 1px solid var(--rakus-border);
-      border-radius: 10px;
-      padding: 14px;
-    }
-    .disclosure {
       font-size: .84rem;
-      color: #666;
-      margin-top: 10px;
+      color: #7c3c00;
+      background: #fff8f2;
     }
+    .scroll { overflow-x: auto; border-radius: 10px; }
 
-    .audience { display: none; }
-    .audience.active { display: block; }
+    .note {
+      background: var(--rakus-bg);
+      border: 1px solid var(--rakus-line);
+      border-radius: 10px;
+      padding: 12px;
+      font-size: .9rem;
+      color: #555;
+    }
 
     footer {
-      border-top: 1px solid var(--rakus-border);
-      padding: 20px;
+      border-top: 1px solid var(--rakus-line);
+      background: var(--rakus-bg);
       color: #666;
-      font-size: .82rem;
-      background: #fafbfc;
+      font-size: .8rem;
     }
-    .footer-inner { max-width: var(--max); margin: 0 auto; }
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 20px;
+    }
 
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; }
-      .grid-2 { grid-template-columns: 1fr; }
+      .grid2 { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">RAKUS AI Strategy</div>
-      <span class="badge">構想版 / Draft</span>
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">RAKUS AI Strategy Room</div>
+      <span class="draft">Draft / 2026-04-15</span>
     </div>
   </header>
 
   <div class="hero">
     <div class="hero-inner">
       <div>
-        <h1>AIを「顧客便益」と「事業成長」へ直結させる<br>ラクスのAI戦略</h1>
-        <p>ラクスのコーポレートトーン（シンプル・信頼感・オレンジ基調）を踏襲し、法人向けと投資家向けの情報を分離したAI専用サイトのたたき台です。</p>
-        <p class="note">戦略原則：<strong>AIをさらなる顧客便益につなげ、それをマネタイズできる領域で活用する。</strong></p>
+        <h1>AIを「顧客便益」と「収益成長」に接続する<br>ラクスの実装戦略</h1>
+        <p>本サイトは、法人向け・投資家向けの2軸で、ラクスのAI戦略、過去取り組み、将来ロードマップを整理するためのコンテンツ設計案です。</p>
+        <div class="principle">
+          戦略原則：<strong>AIをさらなる顧客便益につなげ、それをマネタイズできる領域で活用していく。</strong>
+        </div>
       </div>
-      <aside class="hero-panel">
-        <h3>このページの設計方針</h3>
+      <aside class="panel">
+        <h3>サイト設計の意図</h3>
         <ul>
-          <li>既存サービスへのAI実装を最優先（導入効果が説明しやすい領域）。</li>
-          <li>新規AIサービスは「Coming Soon」で期待を醸成し、開示管理を徹底。</li>
-          <li>公式発表（ニュース/IR）を起点に、外部報道で補強。</li>
+          <li>既存プロダクトへのAI組み込みを中心に据え、成果を定量説明しやすい構成にする。</li>
+          <li>新規AIサービスは開示管理上、詳細非公開（Coming Soon）で段階的に公開する。</li>
+          <li>公式ニュース/IRを主軸に、外部報道を補助線として配置する。</li>
         </ul>
       </aside>
     </div>
   </div>
 
-  <div class="audience-switch">
-    <button class="switch-btn active" data-target="corp">法人向けコンテンツ</button>
-    <button class="switch-btn" data-target="investor">投資家向けコンテンツ</button>
+  <div class="tabs-wrap">
+    <div class="tabs">
+      <button class="tab-btn active" data-view="corp">法人向けコンテンツ</button>
+      <button class="tab-btn" data-view="investor">投資家向けコンテンツ</button>
+    </div>
   </div>
 
   <main>
-    <article id="corp" class="audience active">
+    <article id="corp" class="view active">
       <section>
-        <h2>1. 法人向け：AIで業務体験をどう変えるか</h2>
-        <div class="grid-2">
+        <h2>1. AI戦略（法人向け）</h2>
+        <div class="grid2">
           <div class="card">
-            <span class="tag">既存サービス AI強化</span>
+            <span class="tag">既存サービス強化</span>
             <h3>楽楽精算：申請伝票の自動起票</h3>
-            <p>領収書・事前申請・カード明細・過去履歴を横断し、AIが申請伝票を自動作成。申請の「最後のひと手間」を削減し、経費精算の体験を改善します。</p>
+            <p>課題である「申請に手間がかかる」体験を改善するため、AIが入力候補を自動生成。最終確認はユーザーが実行する設計で、時短と信頼性の両立を狙います。</p>
           </div>
           <div class="card">
-            <span class="tag">既存サービス AI強化</span>
-            <h3>楽楽販売：業務設計と設定をAI支援</h3>
-            <p>自社業務に合わせたDB設計や自動処理設定の難易度を下げ、オンボーディング完了率を高める。AI案を人が仕上げる「AI×ヒト」設計を採用します。</p>
+            <span class="tag">既存サービス強化</span>
+            <h3>楽楽販売：業務設計・設定のAI支援</h3>
+            <p>「自社業務に合わせたDB/自動処理設計が難しい」という導入課題に対し、AIが設計案と設定案を提示。オンボーディング完了率向上を目指します。</p>
+          </div>
+          <div class="card">
+            <span class="tag">運用ポリシー</span>
+            <h3>AI × ヒトで品質担保</h3>
+            <p>提案・草案生成はAI、承認・確定はヒトが担う分担を基本にし、法人業務で必要な説明責任や監査対応を維持します。</p>
+          </div>
+          <div class="card">
+            <span class="tag">新規サービス</span>
+            <h3>Coming Soon（詳細非開示）</h3>
+            <p>生成AIの進化で初めて自動化可能となる業務領域を対象に新規開発を進行中。情報開示はリリース可能段階で段階公開します。</p>
           </div>
         </div>
       </section>
 
       <section>
-        <h2>2. AI関連ニュース年表（主要ピックアップ）</h2>
+        <h2>2. AI関連の公式ニュース（主要時系列）</h2>
         <div class="timeline">
-          <div class="timeline-item"><div class="date">2025/05/01</div><strong>AIエージェント開発専門組織を設立。</strong> 楽楽精算事業統括部直下で開発体制を強化。<br><a href="https://www.rakus.co.jp/news/2025/0501.html" target="_blank" rel="noopener">公式ニュース</a></div>
-          <div class="timeline-item"><div class="date">2025/05/22</div><strong>メールディーラーでAIエージェント連続リリース方針。</strong> 問い合わせ対応の完全自動化を志向。<br><a href="https://www.rakus.co.jp/news/2025/0522.html" target="_blank" rel="noopener">公式ニュース</a></div>
-          <div class="timeline-item"><div class="date">2025/06/24</div><strong>配配メールにAIヘルプを提供開始。</strong> 問い合わせ回答の待ち時間短縮を狙う。<br><a href="https://www.rakus.co.jp/news/2025/0624.html" target="_blank" rel="noopener">公式ニュース</a></div>
-          <div class="timeline-item"><div class="date">2025/07/10</div><strong>楽楽販売にAI機能を順次搭載方針。</strong> 「AI×ヒト」で設計～設定までを支援。<br><a href="https://www.rakus.co.jp/news/2025/0710.html" target="_blank" rel="noopener">公式ニュース</a></div>
-          <div class="timeline-item"><div class="date">2025/07/10</div><strong>楽楽明細・楽楽債権管理にもAI機能搭載方針。</strong> 請求～債権業務の定型作業削減を目指す。<br><a href="https://www.rakus.co.jp/news/2025/0710_2.html" target="_blank" rel="noopener">公式ニュース</a></div>
-          <div class="timeline-item"><div class="date">2025/07/11</div><strong>CAIO（最高AI責任者）を新設。</strong> 全社AI戦略を経営レベルで推進。<br><a href="https://www.rakus.co.jp/news/2025/0711.html" target="_blank" rel="noopener">公式ニュース</a></div>
-          <div class="timeline-item"><div class="date">2025/10/21</div><strong>メールディーラー/配配メールを楽楽クラウドへブランド統合。</strong> 生成AI活用の拡張方針を明確化。<br><a href="https://www.rakus.co.jp/news/2025/1021.html" target="_blank" rel="noopener">公式ニュース</a></div>
-          <div class="timeline-item"><div class="date">2025/10/21</div><strong>楽楽自動応対にAIエージェント第二弾。</strong> 過去応対ナレッジを活用した返信文案生成。<br><a href="https://www.rakus.co.jp/news/2025/1021_2.html" target="_blank" rel="noopener">公式ニュース</a></div>
-          <div class="timeline-item"><div class="date">2025/11/10</div><strong>楽楽販売のAIアシスト機能提供開始。</strong> 標準機能として追加費用なしで提供。<br><a href="https://www.rakus.co.jp/news/2025/1110.html" target="_blank" rel="noopener">公式ニュース</a></div>
-          <div class="timeline-item"><div class="date">2025/12/01</div><strong>楽楽AIエージェント for 楽楽精算 β版開始。</strong> 将来の有償オプション展開を見据える。<br><a href="https://www.rakus.co.jp/news/2025/1201.html" target="_blank" rel="noopener">公式ニュース</a></div>
+          <div class="event"><div class="date">2025-05-01</div><strong>AIエージェント開発専門組織を設立</strong><br><a href="https://www.rakus.co.jp/news/2025/0501.html" target="_blank" rel="noopener">公式ニュース</a></div>
+          <div class="event"><div class="date">2025-05-22</div><strong>メールディーラーでAIエージェント展開方針を発表</strong><br><a href="https://www.rakus.co.jp/news/2025/0522.html" target="_blank" rel="noopener">公式ニュース</a></div>
+          <div class="event"><div class="date">2025-06-24</div><strong>配配メールにAIヘルプ提供開始</strong><br><a href="https://www.rakus.co.jp/news/2025/0624.html" target="_blank" rel="noopener">公式ニュース</a></div>
+          <div class="event"><div class="date">2025-07-10</div><strong>楽楽販売のAI機能展開を発表</strong><br><a href="https://www.rakus.co.jp/news/2025/0710.html" target="_blank" rel="noopener">公式ニュース</a></div>
+          <div class="event"><div class="date">2025-07-10</div><strong>楽楽明細・楽楽債権管理へのAI機能展開を発表</strong><br><a href="https://www.rakus.co.jp/news/2025/0710_2.html" target="_blank" rel="noopener">公式ニュース</a></div>
+          <div class="event"><div class="date">2025-07-11</div><strong>CAIO（最高AI責任者）を新設</strong><br><a href="https://www.rakus.co.jp/news/2025/0711.html" target="_blank" rel="noopener">公式ニュース</a></div>
+          <div class="event"><div class="date">2025-10-21</div><strong>ブランド統合とAI活用方針の拡張</strong><br><a href="https://www.rakus.co.jp/news/2025/1021.html" target="_blank" rel="noopener">公式ニュース</a></div>
+          <div class="event"><div class="date">2025-10-21</div><strong>楽楽自動応対でAIエージェント第二弾</strong><br><a href="https://www.rakus.co.jp/news/2025/1021_2.html" target="_blank" rel="noopener">公式ニュース</a></div>
+          <div class="event"><div class="date">2025-11-10</div><strong>楽楽販売のAIアシスト機能を提供開始</strong><br><a href="https://www.rakus.co.jp/news/2025/1110.html" target="_blank" rel="noopener">公式ニュース</a></div>
+          <div class="event"><div class="date">2025-12-01</div><strong>楽楽AIエージェント for 楽楽精算 β版開始</strong><br><a href="https://www.rakus.co.jp/news/2025/1201.html" target="_blank" rel="noopener">公式ニュース</a></div>
         </div>
       </section>
 
       <section>
-        <h2>3. 新規AIサービス（非開示領域）</h2>
-        <div class="panel">
-          <h3>Coming Soon</h3>
-          <p>生成AIの進化により、従来は効率化・自動化が難しかった業務領域向けの新規サービスを準備中。現時点では詳細非開示とし、公開可能な段階で順次情報を更新します。</p>
-        </div>
-      </section>
-
-      <section>
-        <h2>4. 外部メディア掲載（AI方針の理解補助）</h2>
-        <div class="grid-2">
+        <h2>3. 外部広報・報道（補助情報）</h2>
+        <div class="grid2">
           <div class="card">
-            <h3>クラウドWatch（2025/07/11）</h3>
-            <p>製品組み込み＋社内活用の両輪でAIを進める姿勢を報道。</p>
-            <a href="https://cloud.watch.impress.co.jp/docs/news/2030302.html" target="_blank" rel="noopener">記事を見る</a>
+            <h3>クラウドWatch（2025-07-11）</h3>
+            <p>CAIO新設と、プロダクト組み込み/社内活用の両輪戦略を解説。</p>
+            <a href="https://cloud.watch.impress.co.jp/docs/news/2030302.html" target="_blank" rel="noopener">記事リンク</a>
           </div>
           <div class="card">
-            <h3>Impress Watch（2025/10/22）</h3>
-            <p>「SaaS is not dead（SaaSとAIエージェントの共存）」の考え方を詳説。</p>
-            <a href="https://www.watch.impress.co.jp/docs/news/2056770.html" target="_blank" rel="noopener">記事を見る</a>
+            <h3>Impress Watch（2025-10-22）</h3>
+            <p>SaaSとAIエージェントの関係性に関する発信を掲載。</p>
+            <a href="https://www.watch.impress.co.jp/docs/news/2056770.html" target="_blank" rel="noopener">記事リンク</a>
           </div>
           <div class="card">
-            <h3>週刊BCN（2025/12/04）</h3>
-            <p>楽楽精算AIエージェントβ版の実装内容とマネタイズ方針に言及。</p>
-            <a href="https://www.weeklybcn.com/journal/news/detail/20251204_213104.html" target="_blank" rel="noopener">記事を見る</a>
+            <h3>週刊BCN（2025-12-04）</h3>
+            <p>楽楽精算AIエージェントβ版の狙いを報道。</p>
+            <a href="https://www.weeklybcn.com/journal/news/detail/20251204_213104.html" target="_blank" rel="noopener">記事リンク</a>
           </div>
           <div class="card">
             <h3>楽楽クラウド公式TOP</h3>
-            <p>「AIが、あなたの業務に寄り添い」のメッセージをフロントで明示。</p>
-            <a href="https://www.rakus.co.jp/rakurakucloud/" target="_blank" rel="noopener">ページを見る</a>
+            <p>「AIが、あなたの業務に寄り添い」という訴求を確認可能。</p>
+            <a href="https://www.rakus.co.jp/rakurakucloud/" target="_blank" rel="noopener">公式ページ</a>
           </div>
         </div>
       </section>
     </article>
 
-    <article id="investor" class="audience">
+    <article id="investor" class="view">
       <section>
-        <h2>1. 投資家向け：AI戦略サマリー</h2>
-        <div class="grid-2">
+        <h2>1. 投資家向けメッセージ</h2>
+        <div class="grid2">
           <div class="card">
-            <span class="tag">経営体制</span>
-            <h3>CAIO新設による全社推進</h3>
-            <p>AI施策を個別PoCで終わらせず、経営・事業・開発を横断して優先順位をつける体制へ移行。</p>
+            <span class="tag">経営</span>
+            <h3>CAIO主導の全社推進体制</h3>
+            <p>AIを個別施策ではなく、事業計画と連動した継続投資テーマとして運営。</p>
           </div>
           <div class="card">
-            <span class="tag">事業実装</span>
-            <h3>既存SaaS内への埋め込みを先行</h3>
-            <p>正確性・監査性・権限制御が重要なB2B業務では、SaaS基盤にAIを組み込むアプローチを中核に据える。</p>
+            <span class="tag">製品</span>
+            <h3>既存SaaS埋め込みを先行</h3>
+            <p>法人業務に必要な正確性・監査性を担保しやすい、SaaS内実装を中心に進める。</p>
           </div>
           <div class="card">
             <span class="tag">収益化</span>
-            <h3>便益→利用拡大→オプション化</h3>
-            <p>まず業務削減インパクトを証明し、プロダクトのアップセル/有償オプション化へ接続する設計。</p>
+            <h3>便益証明→利用拡大→価格反映</h3>
+            <p>顧客の工数削減効果を可視化した上で、有償オプション・アップセルへ接続。</p>
           </div>
           <div class="card">
-            <span class="tag">リスク管理</span>
-            <h3>法令・品質・説明責任の担保</h3>
-            <p>AI任せにせず、ヒト確認やルールベース判定を残す「AI×ヒト」の運用で品質を担保。</p>
+            <span class="tag">リスク</span>
+            <h3>説明責任と品質統制</h3>
+            <p>AI提案の妥当性確認フローを標準化し、品質事故の抑制と顧客信頼を維持。</p>
           </div>
         </div>
       </section>
 
       <section>
-        <h2>2. ロードマップ（投資家向け開示案）</h2>
-        <div class="roadmap">
+        <h2>2. ロードマップ（開示用ドラフト）</h2>
+        <div class="scroll">
           <table>
             <thead>
-              <tr><th>期間</th><th>重点テーマ</th><th>実装イメージ</th><th>KPI例</th></tr>
+              <tr><th>期間</th><th>テーマ</th><th>実行内容</th><th>KPI案</th></tr>
             </thead>
             <tbody>
               <tr>
-                <td>2025実績</td>
-                <td>組織化と主要製品への導入着手</td>
-                <td>CAIO新設、AI専門組織設立、楽楽販売/楽楽精算/楽楽自動応対の機能投入</td>
-                <td>AI機能提供製品数、AI利用ユーザー比率</td>
+                <td>2025（実績）</td>
+                <td>体制構築と初期導入</td>
+                <td>CAIO新設、専門組織設立、主要製品へのAI機能投入</td>
+                <td>AI機能搭載製品数 / AI機能利用率</td>
               </tr>
               <tr>
                 <td>2026</td>
-                <td>成果の定量化と収益化</td>
-                <td>β版機能の正式化、プラン設計・価格設計、導入支援強化</td>
-                <td>AI関連ARPA、継続率、オンボ完了率</td>
+                <td>価値検証と収益化</td>
+                <td>β機能の正式版化、料金体系設計、導入支援の標準化</td>
+                <td>AI関連ARPA / 継続率 / オンボ完了率</td>
               </tr>
               <tr>
                 <td>2027</td>
-                <td>プロダクト横断最適化</td>
-                <td>複数サービス連携を前提としたAI体験、共通基盤活用</td>
-                <td>クロスセル率、業務時間削減率</td>
+                <td>横断最適化</td>
+                <td>複数サービス連携を前提としたAIワークフロー拡張</td>
+                <td>クロスセル率 / 顧客あたり利用機能数</td>
               </tr>
               <tr>
                 <td>新規領域</td>
-                <td>生成AI時代の白地市場</td>
+                <td>生成AI起点の新規市場</td>
                 <td>新規AIサービス（Coming Soon）を段階開示</td>
-                <td>PoC→本番化率、新規ARR寄与</td>
+                <td>新規ARR寄与 / PoC本番化率</td>
               </tr>
             </tbody>
           </table>
@@ -395,15 +400,17 @@
       </section>
 
       <section>
-        <h2>3. 参考情報リンク（IR/公式）</h2>
+        <h2>3. 参照リンク（公式）</h2>
         <div class="card">
           <ul>
-            <li><a href="https://www.rakus.co.jp/news/2025/0711.html" target="_blank" rel="noopener">CAIO新設（2025/07/11）</a></li>
-            <li><a href="https://www.rakus.co.jp/news/2025/0501.html" target="_blank" rel="noopener">AIエージェント開発専門組織（2025/05/01）</a></li>
-            <li><a href="https://www.rakus.co.jp/news/2025/1201.html" target="_blank" rel="noopener">楽楽AIエージェント for 楽楽精算 β版（2025/12/01）</a></li>
-            <li><a href="https://www.rakus.co.jp/ir/" target="_blank" rel="noopener">IRトップ</a></li>
+            <li><a href="https://www.rakus.co.jp/news/2025/0501.html" target="_blank" rel="noopener">AIエージェント開発専門組織の設立（2025-05-01）</a></li>
+            <li><a href="https://www.rakus.co.jp/news/2025/0711.html" target="_blank" rel="noopener">CAIO新設（2025-07-11）</a></li>
+            <li><a href="https://www.rakus.co.jp/news/2025/1201.html" target="_blank" rel="noopener">楽楽AIエージェント for 楽楽精算 β版（2025-12-01）</a></li>
+            <li><a href="https://www.rakus.co.jp/ir/" target="_blank" rel="noopener">IRサイト</a></li>
           </ul>
-          <p class="disclosure">注記：数値・提供条件・将来見通しは公式開示資料の更新に応じて必ず差し替える運用を前提にしてください。</p>
+        </div>
+        <div class="note" style="margin-top: 10px;">
+          注記：将来見通し・KPI・価格体系は、正式なIR/ニュース開示に合わせて更新してください。
         </div>
       </section>
     </article>
@@ -411,23 +418,22 @@
 
   <footer>
     <div class="footer-inner">
-      <div>© RAKUS Co., Ltd. / AI Strategy Microsite Draft</div>
-      <div>デザインはラクスコーポレートサイトのトーン＆マナー（余白・信頼感・オレンジアクセント）に合わせた構成です。</div>
+      <div>© RAKUS Co., Ltd. / AI Strategy Room (Draft)</div>
+      <div>最終更新：2026-04-15（UTC）</div>
     </div>
   </footer>
 
   <script>
-    const buttons = document.querySelectorAll('.switch-btn');
-    const sections = document.querySelectorAll('.audience');
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const views = document.querySelectorAll('.view');
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const target = btn.dataset.target;
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        sections.forEach(sec => {
-          sec.classList.toggle('active', sec.id === target);
+    tabButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const target = button.dataset.view;
+        tabButtons.forEach((b) => b.classList.remove('active'));
+        button.classList.add('active');
+        views.forEach((view) => {
+          view.classList.toggle('active', view.id === target);
         });
       });
     });
